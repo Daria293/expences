@@ -4,7 +4,7 @@ print("1.Добавить расход"
       "4.Удалить расход по номеру"
       "5.Выход"
 )
-choice_user = input()
+choice = input()
 
 menu = ["1.Добавить расход",
         "2.Показать все расходы",
@@ -30,6 +30,7 @@ def get_total(expenses: list[float]):
     return summa
 
 def get_average(expenses: list[float]):
+    if len(expenses) != 0:
     avg = sum(expenses) / len(expenses)
     return avg
 
@@ -43,10 +44,12 @@ while choice in menu:
     if choice == "Выход":
         exit()
     if choice == "1.Добавить расход":
+        value = input()
         add_expence(expenses, value)
     if choice == "2.Показать все расходы":
-        get_total(expenses)
+        list[expenses]
     if choice == "3.Показать сумму и средний расход":
         print_report(expenses)
     if choice == "4.Удалить расход по номеру":
+        index = input()
         delete_expence(expenses, index)
