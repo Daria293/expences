@@ -12,9 +12,7 @@ menu = ["1.Добавить расход",
         "4.Удалить расход по номеру",
         "5.Выход"
         ]
-for choice in menu:
-    if choice == "Выход":
-        exit()
+expenses = []
 
 def add_expence(expenses: list[float], value: float):
     if value != 0:
@@ -39,3 +37,15 @@ def print_report(expenses: list[float]):
     print("Сумма ваших расходов: ", (get_total))
     print("Средняя сумма расходов: ", (get_average))
     print("-" * 30)
+
+for choice in menu:
+    if choice == "Выход":
+        exit()
+    if choice == "1.Добавить расход":
+        add_expence
+    if choice == "2.Показать все расходы":
+        get_total
+    if choice == "3.Показать сумму и средний расход":
+        print_report
+    if choice == "4.Удалить расход по номеру":
+        delete_expence
