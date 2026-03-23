@@ -4,7 +4,7 @@ print("1.Добавить расход"
       "4.Удалить расход по номеру"
       "5.Выход"
 )
-choice = input()
+
 
 menu = ["1.Добавить расход",
         "2.Показать все расходы",
@@ -15,13 +15,13 @@ menu = ["1.Добавить расход",
 expenses = []
 
 def add_expence(expenses: list[float], value: float):
-    value = input()
-    if value != 0:
+    
+    if float(value) != 0:
         expenses.append(value)
     return expenses
 
 def delete_expence(expenses: list[float], index: int):
-    if 0 <= index < len(expenses):
+    if 0 <= int(index) < len(expenses):
         del expenses[index]
     return expenses
 
@@ -41,9 +41,11 @@ def print_report(expenses: list[float]):
     print("-" * 30)
 
 while choice in menu:
+    choice = input()
     if choice == menu[4]:
         exit()
     if choice == menu[0]:
+        value = input()
         add_expence(expenses, value)
     if choice == menu[1]:
         list[expenses]
