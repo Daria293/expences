@@ -18,7 +18,7 @@ def add_expence(expenses: list[float], value: float):
     
     if float(value) != 0:
         expenses.append(value)
-    return list[expenses]
+    return expenses
 
 def delete_expence(expenses: list[float], index: int):
     if 0 <= int(index) < len(expenses):
@@ -41,16 +41,17 @@ def print_report(expenses: list[float]):
     print("Сумма ваших расходов: ", (get_total(expenses)))
     print("Средняя сумма расходов: ", (get_average(expenses)))
     print("-" * 30)
-
-while choice != menu[4]:
+choice = 0
+while choice != 5:
     choice = int(input())
     if  choice == 1:
         value = input()
         print(add_expence(expenses, value))
     elif choice == 2:
-        print(list[expenses])
+        print(expenses)
     elif choice == 3:
         print_report(expenses)
     elif choice == 4:
         index = input()
         print(delete_expence(expenses, index))
+    choice = int(input())
