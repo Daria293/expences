@@ -41,17 +41,16 @@ def print_report(expenses: list[float]):
     print("Сумма ваших расходов: ", (get_total(expenses)))
     print("Средняя сумма расходов: ", (get_average(expenses)))
     print("-" * 30)
-choice = input()
-while choice in menu:
-    if choice == menu[4]:
-        exit()
-    if choice == menu[0]:
+
+while choice != menu[4]:
+    choice = int(input())
+    if  choice == 1:
         value = input()
-        add_expence(expenses, value)
-    if choice == menu[1]:
-        list[expenses]
-    if choice == menu[2]:
+        print(add_expence(expenses, value))
+    elif choice == 2:
+        print(list[expenses])
+    elif choice == 3:
         print_report(expenses)
-    if choice == menu[3]:
+    elif choice == 4:
         index = input()
-        delete_expence(expenses, index)
+        print(delete_expence(expenses, index))
